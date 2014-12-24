@@ -1,0 +1,11 @@
+//
+//  ANXBridge-Mac-Prefix.pch
+//  Bridge
+//
+//  Created by Max Rozdobudko on 12/22/14.
+//  Copyright (c) 2014 Max Rozdobudko. All rights reserved.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

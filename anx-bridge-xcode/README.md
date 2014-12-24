@@ -1,0 +1,1 @@
+Contains project for both iOS and OSX implementation.

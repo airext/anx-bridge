@@ -1,0 +1,1 @@
+bridge(context).call("login").callback(callback);
