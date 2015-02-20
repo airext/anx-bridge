@@ -11,12 +11,10 @@ Just link [anx-bridge.swc](https://github.com/airext/anx-bridge/blob/master/bin/
 
 ### Setup Objective-C project
 * link corresponded headers to your Xcode [bin/headers/ios](https://github.com/airext/anx-bridge/blob/master/bin/include/ios) for iOS project and [bin/headers/osx](https://github.com/airext/anx-bridge/blob/master/bin/include/osx) for OSX project;
-* in ContextInitializer **after** function initialization call `[ANXBridge setup:functions:];` as showed next:
+* in ContextInitializer function right **after** function initialization call `[ANXBridge setup:functions:];` as showed next:
 ```objc
 void TSTContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx, uint32_t* numFunctionsToSet, const FRENamedFunction** functionsToSet)
 {
-    NSLog(@"ANXTwitterContextInitializer");
-    
     *numFunctionsToSet = 1;
     
     FRENamedFunction* func = (FRENamedFunction*) malloc(sizeof(FRENamedFunction) * (*numFunctionsToSet));
