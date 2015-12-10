@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension xmlns="http://ns.adobe.com/air/extension/4.0">
   <id>com.github.airext.Bridge</id>
-  <versionNumber>0.0.1</versionNumber>
+  <versionNumber>0.0.2</versionNumber>
   <platforms>
     <platform name="iPhone-ARM">
       <applicationDeployment>
         <nativeLibrary>libANXBridge.a</nativeLibrary>
+        <initializer>ANXBridgeInitializer</initializer>
+        <finalizer>ANXBridgeFinalizer</finalizer>
+      </applicationDeployment>
+    </platform>
+    <platform name="iPhone-x86">
+      <applicationDeployment>
+        <nativeLibrary>libANXBridgeSimulator.a</nativeLibrary>
         <initializer>ANXBridgeInitializer</initializer>
         <finalizer>ANXBridgeFinalizer</finalizer>
       </applicationDeployment>
@@ -16,6 +23,9 @@
         <initializer>ANXBridgeInitializer</initializer>
         <finalizer>ANXBridgeFinalizer</finalizer>
       </applicationDeployment>
+    </platform>
+    <platform name="default">
+        <applicationDeployment></applicationDeployment>
     </platform>
   </platforms>
 </extension>
