@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0E2BB8941A4883950032A829 /* libANXBridge.a in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E9748EB1A48723E0066B507 /* libANXBridge.a */; };
 		0E2BB8BC1A48914A0032A829 /* ANXBridge.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0E2BB89C1A4890720032A829 /* ANXBridge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0E2BB8BE1A4896830032A829 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2BB8BD1A4896830032A829 /* Adobe AIR.framework */; };
 		0E2BB8C01A4898810032A829 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2BB8BF1A4898810032A829 /* Cocoa.framework */; };
 		0E2BB8C11A4899EE0032A829 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E9749081A487A6B0066B507 /* FlashRuntimeExtensions.h */; };
 		0E3403D71A4AD1D5008D1B8B /* ANXBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E3403D11A4AD1D5008D1B8B /* ANXBridge.h */; };
@@ -26,6 +25,7 @@
 		0E3403E21A4AD1D5008D1B8B /* ANXBridgeImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3403D61A4AD1D5008D1B8B /* ANXBridgeImpl.m */; };
 		0E3403E41A4AD1FC008D1B8B /* ANXBridge-Mac-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 0E3403E31A4AD1FC008D1B8B /* ANXBridge-Mac-Prefix.pch */; };
 		0E3403E61A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 0E3403E51A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch */; };
+		0E930BC31C19DB6B0064B228 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E930BC21C19DB6B0064B228 /* Adobe AIR.framework */; };
 		0E9749121A487E820066B507 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E9749081A487A6B0066B507 /* FlashRuntimeExtensions.h */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +54,6 @@
 
 /* Begin PBXFileReference section */
 		0E2BB89C1A4890720032A829 /* ANXBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ANXBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0E2BB8BD1A4896830032A829 /* Adobe AIR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Adobe AIR.framework"; path = "../../../../../sdks/air/4.0.0/runtimes/air/mac/Adobe AIR.framework"; sourceTree = "<group>"; };
 		0E2BB8BF1A4898810032A829 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0E3403D11A4AD1D5008D1B8B /* ANXBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANXBridge.h; path = ANXBridge/ANXBridge.h; sourceTree = SOURCE_ROOT; };
 		0E3403D21A4AD1D5008D1B8B /* ANXBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANXBridge.m; path = ANXBridge/ANXBridge.m; sourceTree = SOURCE_ROOT; };
@@ -65,6 +64,7 @@
 		0E3403E31A4AD1FC008D1B8B /* ANXBridge-Mac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANXBridge-Mac-Prefix.pch"; path = "ANXBridge-Mac/ANXBridge-Mac-Prefix.pch"; sourceTree = "<group>"; };
 		0E3403E51A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANXBridge-iOS-Prefix.pch"; path = "ANXBridge-iOS/ANXBridge-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		0E3403E71A4AD24C008D1B8B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ANXBridge/Info.plist; sourceTree = SOURCE_ROOT; };
+		0E930BC21C19DB6B0064B228 /* Adobe AIR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Adobe AIR.framework"; path = "../../../../sdks/air/19.0.0/runtimes/air/mac/Adobe AIR.framework"; sourceTree = "<group>"; };
 		0E9748EB1A48723E0066B507 /* libANXBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libANXBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9749081A487A6B0066B507 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,8 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E930BC31C19DB6B0064B228 /* Adobe AIR.framework in Frameworks */,
 				0E2BB8C01A4898810032A829 /* Cocoa.framework in Frameworks */,
-				0E2BB8BE1A4896830032A829 /* Adobe AIR.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +100,8 @@
 		0E9748C41A4871FB0066B507 = {
 			isa = PBXGroup;
 			children = (
+				0E930BC21C19DB6B0064B228 /* Adobe AIR.framework */,
 				0E2BB8BF1A4898810032A829 /* Cocoa.framework */,
-				0E2BB8BD1A4896830032A829 /* Adobe AIR.framework */,
 				0E9749071A487A4F0066B507 /* Supporting Platform */,
 				0E9748CF1A4871FB0066B507 /* Bridge */,
 				0E9749021A4872CD0066B507 /* Supporting Core */,
@@ -186,8 +186,8 @@
 				0E2BB8991A4890720032A829 /* Headers */,
 				0E2BB89A1A4890720032A829 /* Resources */,
 				0E2BB8971A4890720032A829 /* Sources */,
-				0E2BB8981A4890720032A829 /* Frameworks */,
 				0E2BB8BB1A4891430032A829 /* CopyFiles */,
+				0E2BB8981A4890720032A829 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,7 +307,7 @@
 				DYLIB_INSTALL_NAME_BASE = "$(inherit)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"${inherit}",
-					/Users/mobitile/sdks/air/4.0.0/runtimes/air/mac,
+					/Users/mobitile/sdks/air/19.0.0/runtimes/air/mac,
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "ANXBridge-Mac/ANXBridge-Mac-Prefix.pch";
@@ -346,7 +346,7 @@
 				DYLIB_INSTALL_NAME_BASE = "$(inherit)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"${inherit}",
-					/Users/mobitile/sdks/air/4.0.0/runtimes/air/mac,
+					/Users/mobitile/sdks/air/19.0.0/runtimes/air/mac,
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_OPTIMIZATION_LEVEL = 0;
