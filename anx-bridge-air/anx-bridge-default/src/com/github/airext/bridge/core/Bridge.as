@@ -13,7 +13,19 @@ public class Bridge
     //
     //--------------------------------------------------------------------------
 
+    public function isSupported():Boolean
+    {
+        return false;
+    }
+
     public static function get(context:ExtensionContext):Bridge
+    {
+        trace("ANXBridge is not supported for " + Capabilities.os);
+
+        return null;
+    }
+
+    public static function extensionVersion():String
     {
         trace("ANXBridge is not supported for " + Capabilities.os);
 

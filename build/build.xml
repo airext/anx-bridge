@@ -99,11 +99,14 @@
 			<arg line="--info" />
 		</exec>
 
-		<!-- Copy Android build artifacts to temporary build folder -->
-		<copy file="${android.project.dir}/ANXBridge/build/libs/ANXBridge.jar" tofile="temp/android/libANXBridge.jar" overwrite="true"/>
+        <!-- Copy API library to ./bin/include directory-->
+		<copy file="${android.project.dir}/ANXBridge/ANXBridge-api/build/libs/ANXBridge-api.jar" tofile="../bin/include/android/ANXBridge.jar" overwrite="true"/>
+
+        <!-- Copy implementation library to temporary build folder -->
+		<copy file="${android.project.dir}/ANXBridge/ANXBridge-impl/build/libs/ANXBridge-impl.jar" tofile="temp/android/libANXBridge.jar" overwrite="true"/>
 
         <!-- Copy manifest to include it into ANE file -->
-        <copy file="${android.project.dir}/ANXBridge/src/main/AndroidManifest.xml" todir="temp/android" overwrite="true"/>
+        <copy file="${android.project.dir}/ANXBridge/ANXBridge-impl/src/main/AndroidManifest.xml" todir="temp/android" overwrite="true"/>
 
 	</target>
 
@@ -214,8 +217,8 @@
             <arg line="-platform iPhone-ARM -platformoptions ../platform-ios.xml -C ios/ ."/>
             <arg line="-platform iPhone-x86 -platformoptions ../platform-ios.xml -C ios-simulator/ ."/>
             <arg line="-platform MacOS-x86 -C osx/ ."/>
-            <!--<arg line="-platform Android-ARM -platformoptions ../platform-android.xml -C android/ ."/>-->
-            <!--<arg line="-platform Android-x86 -platformoptions ../platform-android.xml -C android/ ."/>-->
+            <arg line="-platform Android-ARM -platformoptions ../platform-android.xml -C android/ ."/>
+            <arg line="-platform Android-x86 -platformoptions ../platform-android.xml -C android/ ."/>
             <arg line="-platform default -C default/ ."/>
         </exec>
 

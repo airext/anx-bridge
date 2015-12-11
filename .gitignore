@@ -39,3 +39,5 @@ bin-release/
 #
 */build/launch/**
 */build/ios/**
+/build/temp
+build.properties
