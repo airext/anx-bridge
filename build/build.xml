@@ -102,6 +102,8 @@
         <!-- Copy API library to ./bin/include directory-->
 		<copy file="${android.project.dir}/ANXBridge/ANXBridge-api/build/libs/ANXBridge-api.jar" tofile="../bin/include/android/ANXBridge.jar" overwrite="true"/>
 
+        <copy file="${android.project.dir}/ANXBridge/ANXBridge-api/build/libs/ANXBridge-api.jar" tofile="temp/android/anx-bridge-api.jar" overwrite="true"/>
+
         <!-- Copy implementation library to temporary build folder -->
 		<copy file="${android.project.dir}/ANXBridge/ANXBridge-impl/build/libs/ANXBridge-impl.jar" tofile="temp/android/libANXBridge.jar" overwrite="true"/>
 
