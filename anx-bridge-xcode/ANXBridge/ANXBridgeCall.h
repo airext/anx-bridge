@@ -12,9 +12,13 @@
 
 #pragma mark Constructor
 
--(id) init: (FREContext) aContext callId: (NSUInteger) aCallId;
+-(id) init: (FREContext) aContext callId: (NSNumber*) aCallId;
 
 # pragma mark Getters
+
+-(NSNumber*) getCallId;
+
+-(NSInteger) getCallIndex;
 
 -(id) getResultValue;
 

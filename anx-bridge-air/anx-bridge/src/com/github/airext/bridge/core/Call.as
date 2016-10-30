@@ -88,13 +88,13 @@ public class Call
     {
         var incomingId:int = parseInt(event.level);
 
-        trace(event.code, incomingId, id);
-
         if (incomingId == _id)
         {
             switch (event.code)
             {
                 case "ANXBridgeCallResult" :
+
+                    trace(event.code, incomingId, id);
 
                     _callback(null, context.call("ANXBridgeCallGetValue", _id));
 
@@ -103,6 +103,8 @@ public class Call
                     break;
 
                 case "ANXBridgeCallReject" :
+
+                    trace(event.code, incomingId, id);
 
                     _callback(new Error(context.call("ANXBridgeCallGetError", _id)), null);
 

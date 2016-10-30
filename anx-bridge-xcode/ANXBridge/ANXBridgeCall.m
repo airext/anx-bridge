@@ -9,10 +9,17 @@
 #import "ANXBridgeCall.h"
 
 @implementation ANXBridgeCall
+{
+    FREContext _context;
+    NSNumber* _callId;
+    
+    id _successResult;
+    NSError* _failureReason;
+}
 
 #pragma mark Constructor
 
--(id) init: (FREContext) aContext callId: (NSUInteger) aCallId
+-(id) init: (FREContext) aContext callId: (NSNumber*) aCallId
 {
     self = [super init];
     
@@ -22,35 +29,23 @@
     return self;
 }
 
-#pragma mark Properties
-
-
-
-
-//@synthesize context = _context;
-//
-//@dynamic callId;
-//
-//@dynamic completionValue;
-//
-//@dynamic failureReason;
-
-# pragma mark Variables
-
-FREContext _context;
-
-NSUInteger _callId;
-
 # pragma mark Getters
 
-id _successResult;
+-(NSNumber*) getCallId
+{
+    return _callId;
+}
+
+-(NSInteger) getCallIndex
+{
+    return [_callId integerValue];
+}
 
 -(id) getResultValue
 {
     return _successResult;
 }
 
-NSError* _failureReason;
 
 -(NSError*) getRejectReason
 {
@@ -65,7 +60,7 @@ NSError* _failureReason;
     
     _successResult = value;
     
-    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallResult", (const uint8_t *) [[NSString stringWithFormat:@"%lu", (unsigned long)_callId] UTF8String]);
+    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallResult", (const uint8_t *) [[NSString stringWithFormat:@"%li", [self getCallIndex]] UTF8String]);
 }
 
 -(void) reject: (NSError*) error
@@ -74,14 +69,14 @@ NSError* _failureReason;
     
     _failureReason = error;
     
-    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallReject", (const uint8_t *) [[NSString stringWithFormat:@"%lu", (unsigned long)_callId] UTF8String]);
+    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallReject", (const uint8_t *) [[NSString stringWithFormat:@"%li", [self getCallIndex]] UTF8String]);
 }
 
 -(FREObject) toFREObject
 {
     FREObject result;
     
-    FRENewObjectFromUint32((uint32_t) _callId, &result);
+    FRENewObjectFromUint32((uint32_t) [self getCallIndex], &result);
     
     return result;
 }

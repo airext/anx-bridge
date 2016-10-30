@@ -12,7 +12,11 @@
 
 #pragma mark Class variables
 
-static NSMutableArray* asyncCallStack = nil;
+static const NSInteger MAX_QUEUE_LENGTH = 5;
+
+static NSMutableDictionary* asyncCallQueue = nil;
+
+static NSInteger currentCallIndex = 0;
 
 #pragma mark Class Public Methods
 
@@ -25,8 +29,6 @@ static NSMutableArray* asyncCallStack = nil;
     *numFunctionsToSet = count + 2;
     
     FRENamedFunction* func = realloc((void *) *functionsToSet, sizeof(FRENamedFunction) * (*numFunctionsToSet));
-    
-    NSLog(@"blalba: %u, %u", count, count + 1);
     
     func[count].name = (const uint8_t*) "ANXBridgeCallGetValue";
     func[count].functionData = NULL;
@@ -43,25 +45,24 @@ static NSMutableArray* asyncCallStack = nil;
 
 +(ANXBridgeCall*) call: (FREContext) context
 {
-    NSLog(@"ANXBridgeCall.created");
+    NSLog(@"ANXBridge.call()");
     
-    if (!asyncCallStack)
-        asyncCallStack = [[NSMutableArray alloc] init];
+    if (asyncCallQueue == nil)
+        asyncCallQueue = [[NSMutableDictionary alloc] init];
     
-    NSLog(@"ANXBridgeCall.created 1");
+    NSNumber* callId = [NSNumber numberWithInteger: currentCallIndex++];
     
-    NSUInteger count = [asyncCallStack count];
+    if (currentCallIndex > MAX_QUEUE_LENGTH)
+    {
+        currentCallIndex = 0;
+    }
     
-    ANXBridgeCall* call = [[ANXBridgeCall alloc] init:context callId:count];
+    ANXBridgeCall* call = [[ANXBridgeCall alloc] init: context callId: callId];
     
-    NSLog(@"ANXBridgeCall.created 2");
-    
-    [asyncCallStack addObject: call];
-    
-    NSLog(@"Call created");
+    [asyncCallQueue setObject:call forKey: callId];
     
     #if ! __has_feature(objc_arc)
-        CFRelease(call);
+    CFRelease(call);
     #endif
     
     return call;
@@ -69,23 +70,24 @@ static NSMutableArray* asyncCallStack = nil;
 
 +(void) remove: (ANXBridgeCall*) call
 {
-    if (!asyncCallStack)
+    NSLog(@"ANXBridge.remove()");
+    
+    if (asyncCallQueue == nil)
         return;
     
-    [asyncCallStack removeObject:call];
+    [asyncCallQueue removeObjectForKey: [call getCallId]];
 }
 
 +(ANXBridgeCall*) obtain: (NSUInteger) anId
 {
-    if (!asyncCallStack)
-        return nil;
+    NSLog(@"ANXBridge.obtain()");
     
-    if ([asyncCallStack count] <= anId)
+    if (asyncCallQueue == nil)
         return nil;
-    
+
     @try
     {
-        ANXBridgeCall *call = [asyncCallStack objectAtIndex:anId];
+        ANXBridgeCall* call = [asyncCallQueue objectForKey: [NSNumber numberWithInteger: anId]];
         
         return call;
     }
