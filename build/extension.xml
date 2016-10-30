@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <extension xmlns="http://ns.adobe.com/air/extension/4.0">
   <id>com.github.airext.Bridge</id>
-  <versionNumber>0.0.3</versionNumber>
+  <versionNumber>0.0.5</versionNumber>
   <platforms>
     <platform name="iPhone-ARM">
       <applicationDeployment>
@@ -17,7 +17,7 @@
         <finalizer>ANXBridgeFinalizer</finalizer>
       </applicationDeployment>
     </platform>
-    <platform name="MacOS-x86">
+    <platform name="MacOS-x86-64">
       <applicationDeployment>
         <nativeLibrary>ANXBridge.framework</nativeLibrary>
         <initializer>ANXBridgeInitializer</initializer>
