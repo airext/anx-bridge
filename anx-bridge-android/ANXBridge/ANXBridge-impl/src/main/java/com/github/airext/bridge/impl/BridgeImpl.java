@@ -10,6 +10,7 @@ import com.github.airext.bridge.CallResultValue;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -19,11 +20,21 @@ public class BridgeImpl extends Bridge
 {
     //----------------------------------------------------------------------------------------------
     //
+    //  Class constants
+    //
+    //----------------------------------------------------------------------------------------------
+
+    private static final int MAX_QUEUE_LENGTH = 5;
+
+    private static int currentQueueIndex = 0;
+
+    //----------------------------------------------------------------------------------------------
+    //
     //  Variables
     //
     //----------------------------------------------------------------------------------------------
 
-    protected ArrayList<Call> asyncCallStack;
+    protected Map<Integer, Call> asyncCallQueue;
 
     //----------------------------------------------------------------------------------------------
     //
@@ -45,14 +56,17 @@ public class BridgeImpl extends Bridge
     @Override
     protected Call internalCall(FREContext context)
     {
-        if (asyncCallStack == null)
-            asyncCallStack = new ArrayList<Call>();
+        if (asyncCallQueue == null)
+            asyncCallQueue = new HashMap<Integer, Call>();
 
-        int count = asyncCallStack.size();
+        if (currentQueueIndex > MAX_QUEUE_LENGTH)
+            currentQueueIndex = 0;
 
-        CallImpl call = new CallImpl(context, count);
+        Integer callId = currentQueueIndex++;
 
-        asyncCallStack.add(call);
+        CallImpl call = new CallImpl(context, callId);
+
+        asyncCallQueue.put(callId, call);
 
         return call;
     }
@@ -63,16 +77,10 @@ public class BridgeImpl extends Bridge
 
     protected Call retrieve(int callId)
     {
-        if (asyncCallStack != null && asyncCallStack.size() > callId)
-        {
-            Call call = asyncCallStack.remove(callId);
-
-            return call;
-        }
-        else
-        {
+        if (asyncCallQueue == null)
             return null;
-        }
+
+        return asyncCallQueue.remove(callId);
     }
 
     //----------------------------------------------------------------------------------------------
