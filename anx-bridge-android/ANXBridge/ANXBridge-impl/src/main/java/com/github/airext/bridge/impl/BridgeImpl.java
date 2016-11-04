@@ -1,15 +1,13 @@
 package com.github.airext.bridge.impl;
 
+import android.util.Log;
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
 import com.adobe.fre.FREObject;
 import com.adobe.fre.FREWrongThreadException;
 import com.github.airext.bridge.Bridge;
 import com.github.airext.bridge.Call;
-import com.github.airext.bridge.CallResultValue;
 
-import java.lang.reflect.Method;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,29 +16,29 @@ import java.util.Map;
  */
 public class BridgeImpl extends Bridge
 {
-    //----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     //
     //  Class constants
     //
-    //----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
-    private static final int MAX_QUEUE_LENGTH = 5;
+    private static final int MAX_QUEUE_LENGTH = 1000000;
 
     private static int currentQueueIndex = 0;
 
-    //----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     //
     //  Variables
     //
-    //----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     protected Map<Integer, Call> asyncCallQueue;
 
-    //----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     //
     //  Methods
     //
-    //----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     //------------------------------------------
     //  Methods: Bridge
@@ -83,11 +81,11 @@ public class BridgeImpl extends Bridge
         return asyncCallQueue.remove(callId);
     }
 
-    //----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
     //
     //  Inner classes
     //
-    //----------------------------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     class CallGetValueFunction implements FREFunction
     {
@@ -111,43 +109,19 @@ public class BridgeImpl extends Bridge
                     return null;
                 }
 
+                Log.d("ANXBridge", "Retrieving call for result with id: '" + String.valueOf(callId) + "'");
+
                 CallImpl call = (CallImpl) retrieve(callId);
 
                 if (call != null)
                 {
                     Object value = call.getResultValue();
 
-                    if (value instanceof  FREObject)
-                    {
-                        result = (FREObject) value;
-                    }
-                    else if (value instanceof CallResultValue)
-                    {
-                        try
-                        {
-                            result = ((CallResultValue) value).toFREObject();
-                        }
-                        catch (Exception e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-                    else if (value != null)
-                    {
-                        try
-                        {
-                            Method toFREObject = value.getClass().getMethod("toFREObject");
-
-                            if (toFREObject != null)
-                            {
-                                result = (FREObject) toFREObject.invoke(value);
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
+                    result = ConversionRoutines.toFREObject(value);
+                }
+                else
+                {
+                    Log.e("ANXBridge", "Can't retrieve call with id: '" + String.valueOf(callId) + "'");
                 }
             }
 
@@ -177,6 +151,8 @@ public class BridgeImpl extends Bridge
                     return null;
                 }
 
+                Log.d("ANXBridge", "Retrieving call for error with id: '" + String.valueOf(callId) + "'");
+
                 CallImpl call = (CallImpl) retrieve(callId);
 
                 if (call != null)
@@ -191,6 +167,10 @@ public class BridgeImpl extends Bridge
                     {
                         e.printStackTrace();
                     }
+                }
+                else
+                {
+                    Log.e("ANXBridge.Log.Fatal", "Can't retrieve call with id: '" + String.valueOf(callId) + "'");
                 }
             }
 

@@ -111,6 +111,18 @@ public class Call
                     destroy();
 
                     break;
+
+                case "ANXBridge.Log.Debug" :
+
+                    trace(event.code, event.level);
+
+                    break;
+
+                case "ANXBridge.Log.Fatal" :
+
+                    trace(event.code, event.level);
+
+                    break;
             }
         }
     }
