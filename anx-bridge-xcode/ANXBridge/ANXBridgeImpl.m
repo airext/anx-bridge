@@ -6,13 +6,15 @@
 //  Copyright (c) 2014 Max Rozdobudko. All rights reserved.
 //
 
+#import "ANXBridgeConversionRoutines.h"
+
 #import "ANXBridgeImpl.h"
 
 @implementation ANXBridgeImpl
 
 #pragma mark Class variables
 
-static const NSInteger MAX_QUEUE_LENGTH = 5;
+static const NSInteger MAX_QUEUE_LENGTH = 1000000;
 
 static NSMutableDictionary* asyncCallQueue = nil;
 
@@ -120,16 +122,9 @@ FREObject ANXBridgeCallGetValue(FREContext context, void* functionData, uint32_t
         {
             id successResult = [call getResultValue];
             
-            if (successResult)
-            {
-                SEL selector = NSSelectorFromString(@"toFREObject");
-                IMP imp = [successResult methodForSelector:selector];
-                
-                FREObject (*func)(id, SEL) = (void *)imp;
-                result = func(successResult, selector);
-            }
+            result = [ANXBridgeConversionRoutines toFREObject: successResult];
             
-            [ANXBridgeImpl remove:call];
+            [ANXBridgeImpl remove: call];
         }
     }
     

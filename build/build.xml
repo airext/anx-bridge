@@ -132,6 +132,7 @@
         <!-- Compile .SWC library -->
         <exec executable="java" failonerror="true">
             <arg line='-jar ${air.sdk}/lib/compc-cli.jar' />
+            <!--<arg line='-debug=false' />-->
             <arg line='-source-path ${air.project.dir}/src'/>
             <arg line='-output temp/swc/${name}.swc'/>
             <arg line='-swf-version=13'/>
@@ -178,6 +179,7 @@
         <!-- Compile default .SWC library -->
         <exec executable="java" failonerror="true">
             <arg line='-jar ${air.sdk}/lib/compc-cli.jar' />
+            <!--<arg line='-debug=false' />-->
             <arg line='-source-path ${air-default.project.dir}/src'/>
             <arg line='-output temp/default/${name}.swc'/>
             <arg line='-swf-version=13'/>

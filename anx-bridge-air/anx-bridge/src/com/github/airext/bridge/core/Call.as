@@ -4,6 +4,7 @@
 package com.github.airext.bridge.core {
 import flash.events.StatusEvent;
 import flash.external.ExtensionContext;
+import flash.utils.getTimer;
 
 public class Call
 {
@@ -94,9 +95,13 @@ public class Call
             {
                 case "ANXBridgeCallResult" :
 
-                    trace(event.code, incomingId, id);
+                    trace(event.code, "incoming =", incomingId, "stored =", id);
+
+                    var t:Number = getTimer();
 
                     _callback(null, context.call("ANXBridgeCallGetValue", _id));
+
+                    trace("ANXBridgeCallGetValue took", (getTimer() - t) + "ms", "for callId", _id);
 
                     destroy();
 
@@ -104,23 +109,11 @@ public class Call
 
                 case "ANXBridgeCallReject" :
 
-                    trace(event.code, incomingId, id);
+                    trace(event.code, "incoming =", incomingId, "stored =", id);
 
                     _callback(new Error(context.call("ANXBridgeCallGetError", _id)), null);
 
                     destroy();
-
-                    break;
-
-                case "ANXBridge.Log.Debug" :
-
-                    trace(event.code, event.level);
-
-                    break;
-
-                case "ANXBridge.Log.Fatal" :
-
-                    trace(event.code, event.level);
 
                     break;
             }

@@ -109,6 +109,8 @@ public class Bridge
     {
         super();
 
+        trace("Bridge");
+
         this.context = context;
     }
 

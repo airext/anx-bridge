@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="anx-bridge">
+  <component name="FlexBuildConfigurationManager" active="anx-bridge-default">
     <configurations>
-      <configuration name="anx-bridge" target-platform="Mobile" pure-as="true" output-type="Library" output-file="anx-bridge.swc" output-folder="$MODULE_DIR$/../../build">
-        <dependencies target-player="12.0">
+      <configuration name="anx-bridge-default" target-platform="Mobile" pure-as="true" output-type="Library" output-file="anx-bridge-default.swc" output-folder="$MODULE_DIR$/../../build/temp/default">
+        <dependencies>
           <sdk name="19.0.0" />
         </dependencies>
-        <compiler-options>
-          <map>
-            <entry key="compiler.debug.swc" value="false" />
-          </map>
-        </compiler-options>
+        <compiler-options />
         <packaging-air-desktop />
         <packaging-android />
         <packaging-ios />

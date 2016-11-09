@@ -60,7 +60,7 @@
     
     _successResult = value;
     
-    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallResult", (const uint8_t *) [[NSString stringWithFormat:@"%li", [self getCallIndex]] UTF8String]);
+    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallResult", (const uint8_t *) [[NSString stringWithFormat:@"%li", (long)[self getCallIndex]] UTF8String]);
 }
 
 -(void) reject: (NSError*) error
@@ -69,7 +69,7 @@
     
     _failureReason = error;
     
-    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallReject", (const uint8_t *) [[NSString stringWithFormat:@"%li", [self getCallIndex]] UTF8String]);
+    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallReject", (const uint8_t *) [[NSString stringWithFormat:@"%li", (long)[self getCallIndex]] UTF8String]);
 }
 
 -(FREObject) toFREObject

@@ -27,6 +27,10 @@
 		0E3403E61A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 0E3403E51A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch */; };
 		0E930BC31C19DB6B0064B228 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E930BC21C19DB6B0064B228 /* Adobe AIR.framework */; };
 		0E9749121A487E820066B507 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E9749081A487A6B0066B507 /* FlashRuntimeExtensions.h */; };
+		50C5CCB31DD25A6A00284C3F /* ANXBridgeConversionRoutines.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C5CCB11DD25A6A00284C3F /* ANXBridgeConversionRoutines.h */; };
+		50C5CCB41DD25A6A00284C3F /* ANXBridgeConversionRoutines.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C5CCB11DD25A6A00284C3F /* ANXBridgeConversionRoutines.h */; };
+		50C5CCB51DD25A6A00284C3F /* ANXBridgeConversionRoutines.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C5CCB21DD25A6A00284C3F /* ANXBridgeConversionRoutines.m */; };
+		50C5CCB61DD25A6A00284C3F /* ANXBridgeConversionRoutines.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C5CCB21DD25A6A00284C3F /* ANXBridgeConversionRoutines.m */; };
 		50EA4BD11DC62CAD005B6FE3 /* Adobe AIR_64 in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EA4BD01DC62CAD005B6FE3 /* Adobe AIR_64 */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,8 @@
 		0E930BC21C19DB6B0064B228 /* Adobe AIR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Adobe AIR.framework"; path = "../../../../sdks/air/23.0.0/runtimes/air/mac/Adobe AIR.framework"; sourceTree = "<group>"; };
 		0E9748EB1A48723E0066B507 /* libANXBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libANXBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9749081A487A6B0066B507 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
+		50C5CCB11DD25A6A00284C3F /* ANXBridgeConversionRoutines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANXBridgeConversionRoutines.h; path = ANXBridge/ANXBridgeConversionRoutines.h; sourceTree = SOURCE_ROOT; };
+		50C5CCB21DD25A6A00284C3F /* ANXBridgeConversionRoutines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANXBridgeConversionRoutines.m; path = ANXBridge/ANXBridgeConversionRoutines.m; sourceTree = SOURCE_ROOT; };
 		50EA4BD01DC62CAD005B6FE3 /* Adobe AIR_64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "Adobe AIR_64"; path = "../../../../sdks/air/23.0.0/runtimes/air/mac/Adobe AIR.framework/Versions/1.0/Adobe AIR_64"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +138,8 @@
 				0E3403D41A4AD1D5008D1B8B /* ANXBridgeCall.m */,
 				0E3403D51A4AD1D5008D1B8B /* ANXBridgeImpl.h */,
 				0E3403D61A4AD1D5008D1B8B /* ANXBridgeImpl.m */,
+				50C5CCB11DD25A6A00284C3F /* ANXBridgeConversionRoutines.h */,
+				50C5CCB21DD25A6A00284C3F /* ANXBridgeConversionRoutines.m */,
 			);
 			path = Bridge;
 			sourceTree = "<group>";
@@ -160,6 +168,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C5CCB41DD25A6A00284C3F /* ANXBridgeConversionRoutines.h in Headers */,
 				0E3403D81A4AD1D5008D1B8B /* ANXBridge.h in Headers */,
 				0E3403E01A4AD1D5008D1B8B /* ANXBridgeImpl.h in Headers */,
 				0E3403E41A4AD1FC008D1B8B /* ANXBridge-Mac-Prefix.pch in Headers */,
@@ -172,6 +181,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50C5CCB31DD25A6A00284C3F /* ANXBridgeConversionRoutines.h in Headers */,
 				0E3403E61A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch in Headers */,
 				0E3403D71A4AD1D5008D1B8B /* ANXBridge.h in Headers */,
 				0E3403DF1A4AD1D5008D1B8B /* ANXBridgeImpl.h in Headers */,
@@ -281,6 +291,7 @@
 				0E3403DA1A4AD1D5008D1B8B /* ANXBridge.m in Sources */,
 				0E3403DE1A4AD1D5008D1B8B /* ANXBridgeCall.m in Sources */,
 				0E3403E21A4AD1D5008D1B8B /* ANXBridgeImpl.m in Sources */,
+				50C5CCB61DD25A6A00284C3F /* ANXBridgeConversionRoutines.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +302,7 @@
 				0E3403D91A4AD1D5008D1B8B /* ANXBridge.m in Sources */,
 				0E3403DD1A4AD1D5008D1B8B /* ANXBridgeCall.m in Sources */,
 				0E3403E11A4AD1D5008D1B8B /* ANXBridgeImpl.m in Sources */,
+				50C5CCB51DD25A6A00284C3F /* ANXBridgeConversionRoutines.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,7 +474,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ANXBridge;
@@ -475,7 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PREFIX_HEADER = "ANXBridge-iOS/ANXBridge-iOS-Prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = ANXBridge;
