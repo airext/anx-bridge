@@ -141,7 +141,7 @@ public class Bridge
 
         var value:Object = context.call.apply(null, rest);
 
-        trace("Call", value.id, "took", (getTimer()-t) + "ms");
+        trace("Call", method, "took", (getTimer()-t) + "ms", "for callId:", value.id);
 
         callStack[value.id] = call;
 

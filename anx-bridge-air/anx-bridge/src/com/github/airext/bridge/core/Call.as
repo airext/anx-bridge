@@ -97,15 +97,19 @@ public class Call
 
         if (incomingId == _id)
         {
+            var value:Object;
+
             switch (event.code)
             {
                 case "ANXBridgeCallResult" :
 
                     var t:Number = getTimer();
 
-                    _callback(null, context.call("ANXBridgeCallGetValue", _id, true));
+                    value = context.call("ANXBridgeCallGetValue", _id, true);
 
-                    trace("ANXBridgeCallGetValue took", (getTimer() - t) + "ms", "for callId", _id);
+                    _callback(null, value);
+
+                    trace("ANXBridgeCallGetValue for result took", (getTimer() - t) + "ms", "for callId:", _id, "payload:", value);
 
                     destroy();
 
@@ -115,9 +119,11 @@ public class Call
 
                     var t:Number = getTimer();
 
-                    _callback(null, context.call("ANXBridgeCallGetValue", _id, false));
+                    value = context.call("ANXBridgeCallGetValue", _id, false);
 
-                    trace("ANXBridgeCallGetValue took", (getTimer() - t) + "ms", "for callId", _id);
+                    _callback(null, value);
+
+                    trace("ANXBridgeCallGetValue for notify took", (getTimer() - t) + "ms", "for callId:", _id, "payload:", value);
 
                     break;
 

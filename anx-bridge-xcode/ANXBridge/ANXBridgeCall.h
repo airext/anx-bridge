@@ -22,6 +22,8 @@
 
 -(id) getResultValue;
 
+-(id) getNotifyValue;
+
 -(NSError*) getRejectReason;
 
 # pragma mark Methods

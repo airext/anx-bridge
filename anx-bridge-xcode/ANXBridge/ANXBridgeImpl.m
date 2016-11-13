@@ -122,13 +122,19 @@ FREObject ANXBridgeCallGetValue(FREContext context, void* functionData, uint32_t
         
         if (call)
         {
-            id successResult = [call getResultValue];
-            
-            result = [ANXBridgeConversionRoutines toFREObject: successResult];
-            
             if (removeAfterGet)
             {
+                id successResult = [call getResultValue];
+                
+                result = [ANXBridgeConversionRoutines toFREObject: successResult];
+                
                 [ANXBridgeImpl remove: call];
+            }
+            else
+            {
+                id mediateResult = [call getNotifyValue];
+                
+                result = [ANXBridgeConversionRoutines toFREObject: mediateResult];
             }
         }
     }

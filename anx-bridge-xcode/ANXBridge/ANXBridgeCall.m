@@ -14,6 +14,7 @@
     NSNumber* _callId;
     
     id _successResult;
+    id _mediateResult;
     NSError* _failureReason;
 }
 
@@ -46,6 +47,10 @@
     return _successResult;
 }
 
+-(id) getNotifyValue
+{
+    return _mediateResult;
+}
 
 -(NSError*) getRejectReason
 {
@@ -76,7 +81,7 @@
 {
     NSLog(@"ANXBridgeCall.notify:");
     
-    _successResult = value;
+    _mediateResult = value;
     
     FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallNotify", (const uint8_t *) [[NSString stringWithFormat:@"%li", (long)[self getCallIndex]] UTF8String]);
 }
