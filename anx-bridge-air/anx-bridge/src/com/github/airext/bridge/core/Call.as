@@ -14,7 +14,7 @@ public class Call
     //
     //--------------------------------------------------------------------------
 
-    public function Call(context:ExtensionContext, id:uint)
+    public function Call(context:ExtensionContext, id:uint, payload:Object)
     {
         super();
 
@@ -22,6 +22,8 @@ public class Call
 
         this.context = context;
         this.context.addEventListener(StatusEvent.STATUS, context_statusHandler);
+
+        this.payload = payload;
     }
 
     //--------------------------------------------------------------------------
@@ -31,6 +33,8 @@ public class Call
     //--------------------------------------------------------------------------
 
     private var context:ExtensionContext;
+
+    private var payload:Object;
 
     //--------------------------------------------------------------------------
     //
@@ -61,9 +65,11 @@ public class Call
 
     private var _callback:Function;
 
-    public function callback(value:Function):void
+    public function callback(value:Function):Object
     {
         _callback = value;
+
+        return payload;
     }
 
     //--------------------------------------------------------------------------
@@ -95,11 +101,9 @@ public class Call
             {
                 case "ANXBridgeCallResult" :
 
-                    trace(event.code, "incoming =", incomingId, "stored =", id);
-
                     var t:Number = getTimer();
 
-                    _callback(null, context.call("ANXBridgeCallGetValue", _id));
+                    _callback(null, context.call("ANXBridgeCallGetValue", _id, true));
 
                     trace("ANXBridgeCallGetValue took", (getTimer() - t) + "ms", "for callId", _id);
 
@@ -107,9 +111,19 @@ public class Call
 
                     break;
 
+                case "ANXBridgeCallNotify" :
+
+                    var t:Number = getTimer();
+
+                    _callback(null, context.call("ANXBridgeCallGetValue", _id, false));
+
+                    trace("ANXBridgeCallGetValue took", (getTimer() - t) + "ms", "for callId", _id);
+
+                    break;
+
                 case "ANXBridgeCallReject" :
 
-                    trace(event.code, "incoming =", incomingId, "stored =", id);
+                    trace(event.code, "incoming =", incomingId, "stored =", _id);
 
                     _callback(new Error(context.call("ANXBridgeCallGetError", _id)), null);
 

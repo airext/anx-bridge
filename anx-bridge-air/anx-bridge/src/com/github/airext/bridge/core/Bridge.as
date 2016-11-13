@@ -7,6 +7,7 @@ import flash.filesystem.File;
 import flash.filesystem.FileMode;
 import flash.filesystem.FileStream;
 import flash.utils.Dictionary;
+import flash.utils.getTimer;
 
 public class Bridge
 {
@@ -109,8 +110,6 @@ public class Bridge
     {
         super();
 
-        trace("Bridge");
-
         this.context = context;
     }
 
@@ -138,11 +137,15 @@ public class Bridge
     {
         rest.unshift(method);
 
-        var id:uint = context.call.apply(null, rest);
+        var t:Number = getTimer();
 
-        callStack[id] = call;
+        var value:Object = context.call.apply(null, rest);
 
-        return new Call(context, id);
+        trace("Call", value.id, "took", (getTimer()-t) + "ms");
+
+        callStack[value.id] = call;
+
+        return new Call(context, value.id, value.payload);
     }
 
     //-------------------------------------

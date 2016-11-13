@@ -47,9 +47,11 @@ public class Call
     //  callback
     //-------------------------------------
 
-    public function callback(value:Function):void
+    public function callback(value:Function):Object
     {
         trace("ANXBridge is not supported for " + Capabilities.os);
+
+        return null;
     }
 
     //--------------------------------------------------------------------------

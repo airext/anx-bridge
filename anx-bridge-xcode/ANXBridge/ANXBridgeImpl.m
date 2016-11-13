@@ -110,11 +110,13 @@ FREObject ANXBridgeCallGetValue(FREContext context, void* functionData, uint32_t
     
     FREObject result = NULL;
     
-    if (argc > 0)
+    if (argc > 1)
     {
         uint32_t incomingCallId;
-        
         FREGetObjectAsUint32(argv[0], &incomingCallId);
+        
+        uint32_t removeAfterGet;
+        FREGetObjectAsBool(argv[1], &removeAfterGet);
         
         ANXBridgeCall *call = [ANXBridgeImpl obtain:(NSUInteger) incomingCallId];
         
@@ -124,7 +126,10 @@ FREObject ANXBridgeCallGetValue(FREContext context, void* functionData, uint32_t
             
             result = [ANXBridgeConversionRoutines toFREObject: successResult];
             
-            [ANXBridgeImpl remove: call];
+            if (removeAfterGet)
+            {
+                [ANXBridgeImpl remove: call];
+            }
         }
     }
     

@@ -72,12 +72,37 @@
     FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallReject", (const uint8_t *) [[NSString stringWithFormat:@"%li", (long)[self getCallIndex]] UTF8String]);
 }
 
+-(void) notify: (id) value
+{
+    NSLog(@"ANXBridgeCall.notify:");
+    
+    _successResult = value;
+    
+    FREDispatchStatusEventAsync(_context, (const uint8_t *) "ANXBridgeCallNotify", (const uint8_t *) [[NSString stringWithFormat:@"%li", (long)[self getCallIndex]] UTF8String]);
+}
+
 -(FREObject) toFREObject
 {
+    return [self toFREObjectWithPayload: NULL];
+}
+
+-(FREObject) toFREObjectWithPayload: (FREObject) payload
+{
     FREObject result;
+    if (FRENewObject((const uint8_t*) "Object", 0, NULL, &result, NULL) != FRE_OK)
+        return NULL;
     
-    FRENewObjectFromUint32((uint32_t) [self getCallIndex], &result);
+    FREObject idValue;
+    if (FRENewObjectFromUint32((uint32_t) [self getCallIndex], &idValue) != FRE_OK)
+        return NULL;
+    
+    if (FRESetObjectProperty(result, (const uint8_t *) "id", idValue, NULL) != FRE_OK)
+        return NULL;
+    
+    if (payload && FRESetObjectProperty(result, (const uint8_t *) "payload", payload, NULL) != FRE_OK)
+        return NULL;
     
     return result;
 }
+
 @end

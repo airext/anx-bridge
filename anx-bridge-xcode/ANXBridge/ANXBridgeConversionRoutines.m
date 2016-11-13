@@ -67,10 +67,10 @@
 
 +(FREObject) convert: (id) value
 {
-    FREObject result;
-    
     if (value)
     {
+        FREObject result;
+        
         if ([value isKindOfClass: [NSString class]])
         {
             result = [self convertNSStringToFREObject:(NSString *) value];
@@ -83,10 +83,13 @@
             FREObject (*func)(id, SEL) = (void *)imp;
             result = func(value, selector);
         }
+        
+        return result;
     }
-    
-    return result;
-
+    else
+    {
+        return NULL;
+    }
 }
 
 @end
