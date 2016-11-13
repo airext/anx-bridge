@@ -12,9 +12,13 @@
 
 #pragma mark Constructor
 
--(id) init: (FREContext) aContext callId: (NSUInteger) aCallId;
+-(id) init: (FREContext) aContext callId: (NSNumber*) aCallId;
 
 # pragma mark Getters
+
+-(NSNumber*) getCallId;
+
+-(NSInteger) getCallIndex;
 
 -(id) getResultValue;
 
@@ -24,8 +28,12 @@
 
 -(void) result: (id) value;
 
--(void) reject: (NSError*) error; 
+-(void) reject: (NSError*) error;
+
+-(void) notify: (id) value;
 
 -(FREObject) toFREObject;
+
+-(FREObject) toFREObjectWithPayload: (FREObject) payload;
 
 @end
