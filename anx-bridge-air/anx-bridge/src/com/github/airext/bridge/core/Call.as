@@ -4,6 +4,7 @@
 package com.github.airext.bridge.core {
 import flash.events.StatusEvent;
 import flash.external.ExtensionContext;
+import flash.utils.ByteArray;
 import flash.utils.getTimer;
 
 public class Call
@@ -109,7 +110,7 @@ public class Call
 
                     _callback(null, value);
 
-                    trace("ANXBridgeCallGetValue for result took", (getTimer() - t) + "ms", "for callId:", _id, "payload:", value);
+                    trace("ANXBridgeCallGetValue for result took", (getTimer() - t) + "ms", "for callId:", _id, "payload:", value is ByteArray ? "[ByteArray]" : value);
 
                     destroy();
 
@@ -123,7 +124,7 @@ public class Call
 
                     _callback(null, value);
 
-                    trace("ANXBridgeCallGetValue for notify took", (getTimer() - t) + "ms", "for callId:", _id, "payload:", value);
+                    trace("ANXBridgeCallGetValue for notify took", (getTimer() - t) + "ms", "for callId:", _id, "payload:", value is ByteArray ? "[ByteArray]" : value);
 
                     break;
 
