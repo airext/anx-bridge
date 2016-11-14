@@ -37,6 +37,17 @@ public class Call
         return null;
     }
 
+    //-------------------------------------
+    //  returnValue
+    //-------------------------------------
+
+    public function get returnValue():Object
+    {
+        trace("ANXBridge is not supported for " + Capabilities.os);
+
+        return null;
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Setters
@@ -47,11 +58,11 @@ public class Call
     //  callback
     //-------------------------------------
 
-    public function callback(value:Function):Object
+    public function callback(value:Function):Call
     {
         trace("ANXBridge is not supported for " + Capabilities.os);
 
-        return null;
+        return this;
     }
 
     //--------------------------------------------------------------------------

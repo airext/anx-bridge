@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Max Rozdobudko. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #include "ANXBridgeCall.h"
 
 @interface ANXBridge : NSObject

@@ -16,6 +16,8 @@
 
 +(ANXBridgeCall*) call: (FREContext) context;
 
++(void) remove: (ANXBridgeCall*) call;
+
 @end
 
 # pragma mark C API

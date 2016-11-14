@@ -2,6 +2,8 @@
  * Created by Max Rozdobudko on 12/11/14.
  */
 package com.github.airext.bridge.core {
+import com.github.airext.bridge.errors.CancellationError;
+
 import flash.events.StatusEvent;
 import flash.external.ExtensionContext;
 import flash.utils.ByteArray;
@@ -54,6 +56,15 @@ public class Call
         return _id;
     }
 
+    //-------------------------------------
+    //  returnValue
+    //-------------------------------------
+
+    public function get returnValue():Object
+    {
+        return payload;
+    }
+
     //--------------------------------------------------------------------------
     //
     //  Setters
@@ -66,11 +77,11 @@ public class Call
 
     private var _callback:Function;
 
-    public function callback(value:Function):Object
+    public function callback(value:Function):Call
     {
         _callback = value;
 
-        return payload;
+        return this;
     }
 
     //--------------------------------------------------------------------------
@@ -130,9 +141,19 @@ public class Call
 
                 case "ANXBridgeCallReject" :
 
-                    trace(event.code, "incoming =", incomingId, "stored =", _id);
+                    trace(event.code, "for callId:", _id);
 
                     _callback(new Error(context.call("ANXBridgeCallGetError", _id)), null);
+
+                    destroy();
+
+                    break;
+
+                case "ANXBridgeCallCancel" :
+
+                    trace(event.code, "for callId:", _id);
+
+                    _callback(new CancellationError("Call canceled by native side"), null);
 
                     destroy();
 

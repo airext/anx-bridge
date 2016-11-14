@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Max Rozdobudko. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
 #import "FlashRuntimeExtensions.h"
 
 @interface ANXBridgeCall : NSObject
@@ -24,6 +26,8 @@
 
 -(id) getNotifyValue;
 
+-(BOOL) isCancelled;
+
 -(NSError*) getRejectReason;
 
 # pragma mark Methods
@@ -33,6 +37,8 @@
 -(void) reject: (NSError*) error;
 
 -(void) notify: (id) value;
+
+-(void) cancel;
 
 -(FREObject) toFREObject;
 

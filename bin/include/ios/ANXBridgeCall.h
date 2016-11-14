@@ -22,6 +22,10 @@
 
 -(id) getResultValue;
 
+-(id) getNotifyValue;
+
+-(BOOL) isCancelled;
+
 -(NSError*) getRejectReason;
 
 # pragma mark Methods
@@ -31,6 +35,8 @@
 -(void) reject: (NSError*) error;
 
 -(void) notify: (id) value;
+
+-(void) cancel;
 
 -(FREObject) toFREObject;
 
