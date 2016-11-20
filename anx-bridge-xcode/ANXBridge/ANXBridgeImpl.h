@@ -18,6 +18,8 @@
 
 +(void) remove: (ANXBridgeCall*) call;
 
++(ANXBridgeCall*) obtain: (NSUInteger) anId;
+
 @end
 
 # pragma mark C API

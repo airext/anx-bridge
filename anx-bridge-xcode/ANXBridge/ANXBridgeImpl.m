@@ -61,7 +61,9 @@ static NSInteger currentCallIndex = 0;
     
     ANXBridgeCall* call = [[ANXBridgeCall alloc] init: context callId: callId];
     
-    [asyncCallQueue setObject:call forKey: callId];
+    @synchronized (self) {
+        [asyncCallQueue setObject:call forKey: callId];
+    }
     
     #if ! __has_feature(objc_arc)
     CFRelease(call);
@@ -77,7 +79,9 @@ static NSInteger currentCallIndex = 0;
     if (asyncCallQueue == nil)
         return;
     
-    [asyncCallQueue removeObjectForKey: [call getCallId]];
+    @synchronized (self) {
+        [asyncCallQueue removeObjectForKey: [call getCallId]];
+    }
 }
 
 +(ANXBridgeCall*) obtain: (NSUInteger) anId

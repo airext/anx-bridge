@@ -22,4 +22,9 @@
     return [ANXBridgeImpl call: context];
 }
 
++(ANXBridgeCall*) callWithId: (NSUInteger) anId
+{
+    return [ANXBridgeImpl obtain: anId];
+}
+
 @end

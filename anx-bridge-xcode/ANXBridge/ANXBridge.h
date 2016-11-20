@@ -16,4 +16,6 @@
 
 +(ANXBridgeCall*) call: (FREContext) context;
 
++(ANXBridgeCall*) callWithId: (NSUInteger) anId;
+
 @end
