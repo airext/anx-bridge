@@ -10,6 +10,8 @@
 
 #include "ANXBridgeImpl.h"
 
+NSInteger ANX_BRIDGE_MAX_QUEUE_LENGTH = 1000000;
+
 @implementation ANXBridge
 
 +(BOOL) setup: (uint32_t*) numFunctionsToSet functions: (FRENamedFunction**) functionsToSet

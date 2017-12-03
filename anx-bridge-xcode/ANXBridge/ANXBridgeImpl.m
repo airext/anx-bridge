@@ -8,13 +8,12 @@
 
 #import "ANXBridgeConversionRoutines.h"
 
+#import "ANXBridge.h"
 #import "ANXBridgeImpl.h"
 
 @implementation ANXBridgeImpl
 
 #pragma mark Class variables
-
-static const NSInteger MAX_QUEUE_LENGTH = 1000000;
 
 static NSMutableDictionary* asyncCallQueue = nil;
 
@@ -54,7 +53,7 @@ static NSInteger currentCallIndex = 0;
     
     NSNumber* callId = [NSNumber numberWithInteger: currentCallIndex++];
     
-    if (currentCallIndex > MAX_QUEUE_LENGTH)
+    if (currentCallIndex > ANX_BRIDGE_MAX_QUEUE_LENGTH)
     {
         currentCallIndex = 0;
     }

@@ -10,6 +10,8 @@
 
 #include "ANXBridgeCall.h"
 
+extern NSInteger ANX_BRIDGE_MAX_QUEUE_LENGTH;
+
 @interface ANXBridge : NSObject
 
 +(BOOL) setup: (uint32_t*) numFunctionsToSet functions: (FRENamedFunction**) functionsToSet;
