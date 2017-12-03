@@ -30,22 +30,17 @@ public abstract class Bridge
 
     protected static Bridge implementation;
 
-    protected static Bridge getImplementation() throws ClassNotFoundException, IllegalAccessException, InstantiationException
-    {
-        if (implementation == null)
-        {
+    protected static Bridge getImplementation() throws ClassNotFoundException, IllegalAccessException, InstantiationException {
+        if (implementation == null) {
             Class<?> Impl = Class.forName(DEFAULT_IMPLEMENTATION);
-
             setImplementation((Bridge) Impl.newInstance());
         }
 
         return implementation;
     }
 
-    protected static void setImplementation(Bridge value)
-    {
-        if (implementation == null)
-        {
+    protected static void setImplementation(Bridge value) {
+        if (implementation == null) {
             implementation = value;
         }
     }
@@ -75,23 +70,29 @@ public abstract class Bridge
     @Nullable
     public static Call call(FREContext context)
     {
-        try
-        {
+        try {
             return getImplementation().internalCall(context);
-        }
-        catch (ClassNotFoundException e)
-        {
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
             e.printStackTrace();
         }
-        catch (IllegalAccessException e)
-        {
-            e.printStackTrace();
-        }
-        catch (InstantiationException e)
-        {
-            e.printStackTrace();
-        }
+        return null;
+    }
 
+    @Nullable
+    public static Call callWithId(int callId) {
+        try {
+            return getImplementation().internalObtain(callId);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
@@ -104,4 +105,6 @@ public abstract class Bridge
     abstract protected void internalSetup(Map<String, FREFunction> functions);
 
     abstract protected Call internalCall(FREContext context);
+
+    abstract protected Call internalObtain(int callId);
 }

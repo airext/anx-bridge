@@ -62,23 +62,38 @@ public class BridgeImpl extends Bridge
 
         Integer callId = currentQueueIndex++;
 
-        CallImpl call = new CallImpl(context, callId);
+        CallImpl call = new CallImpl(context, callId, this);
 
         asyncCallQueue.put(callId, call);
 
         return call;
     }
 
+    @Override
+    protected Call internalObtain(int callId) {
+        if (asyncCallQueue != null) {
+            return asyncCallQueue.get(callId);
+        } else {
+            return null;
+        }
+    }
+
     //------------------------------------------
     //  Methods: Internal
     //------------------------------------------
 
-    protected Call retrieve(int callId)
-    {
-        if (asyncCallQueue == null)
+    Call obtain(int callId) {
+        if (asyncCallQueue != null) {
+            return asyncCallQueue.get(callId);
+        } else {
             return null;
+        }
+    }
 
-        return asyncCallQueue.remove(callId);
+    void remove(Call call) {
+        if (asyncCallQueue != null) {
+            asyncCallQueue.remove(call.getCallId());
+        }
     }
 
     //--------------------------------------------------------------------------
@@ -96,11 +111,13 @@ public class BridgeImpl extends Bridge
 
             if (args.length > 0)
             {
-                int callId;
+                int incomingCallId;
+                Boolean removeAfterGet;
 
                 try
                 {
-                    callId = args[0].getAsInt();
+                    incomingCallId = args[0].getAsInt();
+                    removeAfterGet = args[1].getAsBool();
                 }
                 catch (Exception e)
                 {
@@ -109,9 +126,19 @@ public class BridgeImpl extends Bridge
                     return null;
                 }
 
-                Log.d("ANXBridge", "Retrieving call for result with id: '" + String.valueOf(callId) + "'");
+                Log.d("ANXBridge", "Retrieving call for result with id: '" + String.valueOf(incomingCallId) + "'");
 
-                CallImpl call = (CallImpl) retrieve(callId);
+                CallImpl call = (CallImpl) obtain(incomingCallId);
+                if (call != null) {
+                    if (removeAfterGet) {
+                        Object successResult = call.getResultValue();
+                        result = ConversionRoutines.toFREObject(successResult);
+                        remove(call);
+                    } else {
+                        Object mediateResult = call.getNotifyValue();
+                        result = ConversionRoutines.toFREObject(mediateResult);
+                    }
+                }
 
                 if (call != null)
                 {
@@ -121,7 +148,7 @@ public class BridgeImpl extends Bridge
                 }
                 else
                 {
-                    Log.e("ANXBridge", "Can't retrieve call with id: '" + String.valueOf(callId) + "'");
+                    Log.e("ANXBridge", "Can't retrieve call with id: '" + String.valueOf(incomingCallId) + "'");
                 }
             }
 
@@ -153,7 +180,7 @@ public class BridgeImpl extends Bridge
 
                 Log.d("ANXBridge", "Retrieving call for error with id: '" + String.valueOf(callId) + "'");
 
-                CallImpl call = (CallImpl) retrieve(callId);
+                CallImpl call = (CallImpl) obtain(callId);
 
                 if (call != null)
                 {
@@ -167,6 +194,8 @@ public class BridgeImpl extends Bridge
                     {
                         e.printStackTrace();
                     }
+
+                    remove(call);
                 }
                 else
                 {

@@ -6,6 +6,7 @@ import android.util.Log;
 import com.adobe.fre.FREArray;
 import com.adobe.fre.FREBitmapData;
 import com.adobe.fre.FREObject;
+import com.adobe.fre.FREWrongThreadException;
 import com.github.airext.bridge.CallResultValue;
 
 import java.lang.reflect.Method;
@@ -53,31 +54,46 @@ public class ConversionRoutines
     @Nullable
     private static FREObject convert(Object value)
     {
-        if (value instanceof FREObject)
-        {
-            return  (FREObject) value;
-        }
-        else if (value instanceof CallResultValue)
-        {
-            try
-            {
-                return ((CallResultValue) value).toFREObject();
-            }
-            catch (Exception e)
-            {
+        if (value instanceof Boolean) {
+            try {
+                return FREObject.newObject((Boolean)value);
+            } catch (FREWrongThreadException e) {
                 e.printStackTrace();
             }
-        }
-        else if (value instanceof Bitmap)
-        {
+        } else if (value instanceof Integer) {
+            try {
+                return FREObject.newObject((int)value);
+            } catch (FREWrongThreadException e) {
+                e.printStackTrace();
+            }
+        } else if (value instanceof Double) {
+            try {
+                return FREObject.newObject((double)value);
+            } catch (FREWrongThreadException e) {
+                e.printStackTrace();
+            }
+        } else if (value instanceof String) {
+            try {
+                return FREObject.newObject((String)value);
+            } catch (FREWrongThreadException e) {
+                e.printStackTrace();
+            }
+        } else if (value instanceof FREObject) {
+            return  (FREObject) value;
+        } else if (value instanceof CallResultValue) {
+            try {
+                return ((CallResultValue) value).toFREObject();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else if (value instanceof Bitmap) {
             long t = System.nanoTime();
 
             Bitmap bitmap = (Bitmap) value;
 
             Byte[] fillColor = {0,0,0,0};
 
-            try
-            {
+            try {
                 FREBitmapData bmd = FREBitmapData.newBitmapData(bitmap.getWidth(), bitmap.getHeight(), true, fillColor);
 
                 bmd.acquire();
@@ -87,25 +103,16 @@ public class ConversionRoutines
                 Log.i("ANXBridge", ">>>".concat(String.valueOf(System.nanoTime() - t)));
 
                 return bmd;
-            }
-            catch (Throwable e)
-            {
+            } catch (Throwable e) {
                 e.printStackTrace();
             }
-        }
-        else if (value != null)
-        {
-            try
-            {
+        } else if (value != null) {
+            try {
                 Method toFREObject = value.getClass().getMethod("toFREObject");
-
-                if (toFREObject != null)
-                {
+                if (toFREObject != null) {
                     return (FREObject) toFREObject.invoke(value);
                 }
-            }
-            catch (Exception e)
-            {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
