@@ -3,10 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ANXBridge.iml" filepath="$PROJECT_DIR$/ANXBridge.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ANXBridge.iml" filepath="$PROJECT_DIR$/ANXBridge.iml" />
       <module fileurl="file://$PROJECT_DIR$/ANXBridge-api/ANXBridge-api.iml" filepath="$PROJECT_DIR$/ANXBridge-api/ANXBridge-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ANXBridge-api/ANXBridge-api.iml" filepath="$PROJECT_DIR$/ANXBridge-api/ANXBridge-api.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ANXBridge-impl/ANXBridge-impl.iml" filepath="$PROJECT_DIR$/ANXBridge-impl/ANXBridge-impl.iml" />
       <module fileurl="file://$PROJECT_DIR$/ANXBridge-impl/ANXBridge-impl.iml" filepath="$PROJECT_DIR$/ANXBridge-impl/ANXBridge-impl.iml" />
     </modules>
   </component>
