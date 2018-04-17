@@ -25,13 +25,13 @@
 		0E3403E21A4AD1D5008D1B8B /* ANXBridgeImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E3403D61A4AD1D5008D1B8B /* ANXBridgeImpl.m */; };
 		0E3403E41A4AD1FC008D1B8B /* ANXBridge-Mac-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 0E3403E31A4AD1FC008D1B8B /* ANXBridge-Mac-Prefix.pch */; };
 		0E3403E61A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 0E3403E51A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch */; };
+		0E930BC31C19DB6B0064B228 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E930BC21C19DB6B0064B228 /* Adobe AIR.framework */; };
 		0E9749121A487E820066B507 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E9749081A487A6B0066B507 /* FlashRuntimeExtensions.h */; };
 		50C5CCB31DD25A6A00284C3F /* ANXBridgeConversionRoutines.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C5CCB11DD25A6A00284C3F /* ANXBridgeConversionRoutines.h */; };
 		50C5CCB41DD25A6A00284C3F /* ANXBridgeConversionRoutines.h in Headers */ = {isa = PBXBuildFile; fileRef = 50C5CCB11DD25A6A00284C3F /* ANXBridgeConversionRoutines.h */; };
 		50C5CCB51DD25A6A00284C3F /* ANXBridgeConversionRoutines.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C5CCB21DD25A6A00284C3F /* ANXBridgeConversionRoutines.m */; };
 		50C5CCB61DD25A6A00284C3F /* ANXBridgeConversionRoutines.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C5CCB21DD25A6A00284C3F /* ANXBridgeConversionRoutines.m */; };
-		50DCBD851FD332F100648DC8 /* Adobe AIR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DCBD841FD332F100648DC8 /* Adobe AIR.framework */; };
-		50DCBD871FD3331B00648DC8 /* Adobe AIR_64 in Frameworks */ = {isa = PBXBuildFile; fileRef = 50DCBD861FD3331B00648DC8 /* Adobe AIR_64 */; };
+		50EA4BD11DC62CAD005B6FE3 /* Adobe AIR_64 in Frameworks */ = {isa = PBXBuildFile; fileRef = 50EA4BD01DC62CAD005B6FE3 /* Adobe AIR_64 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,14 +69,12 @@
 		0E3403E31A4AD1FC008D1B8B /* ANXBridge-Mac-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANXBridge-Mac-Prefix.pch"; path = "ANXBridge-Mac/ANXBridge-Mac-Prefix.pch"; sourceTree = "<group>"; };
 		0E3403E51A4AD205008D1B8B /* ANXBridge-iOS-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ANXBridge-iOS-Prefix.pch"; path = "ANXBridge-iOS/ANXBridge-iOS-Prefix.pch"; sourceTree = "<group>"; };
 		0E3403E71A4AD24C008D1B8B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ANXBridge/Info.plist; sourceTree = SOURCE_ROOT; };
-		0E930BC21C19DB6B0064B228 /* Adobe AIR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Adobe AIR.framework"; path = "../../../../sdks/air/23.0.0/runtimes/air/mac/Adobe AIR.framework"; sourceTree = "<group>"; };
+		0E930BC21C19DB6B0064B228 /* Adobe AIR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Adobe AIR.framework"; path = "Vendor/Adobe/AIR/Adobe AIR.framework"; sourceTree = "<group>"; };
 		0E9748EB1A48723E0066B507 /* libANXBridge.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libANXBridge.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E9749081A487A6B0066B507 /* FlashRuntimeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlashRuntimeExtensions.h; sourceTree = "<group>"; };
 		50C5CCB11DD25A6A00284C3F /* ANXBridgeConversionRoutines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ANXBridgeConversionRoutines.h; path = ANXBridge/ANXBridgeConversionRoutines.h; sourceTree = SOURCE_ROOT; };
 		50C5CCB21DD25A6A00284C3F /* ANXBridgeConversionRoutines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ANXBridgeConversionRoutines.m; path = ANXBridge/ANXBridgeConversionRoutines.m; sourceTree = SOURCE_ROOT; };
-		50DCBD841FD332F100648DC8 /* Adobe AIR.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Adobe AIR.framework"; path = "../../../../sdks/air/27.0.0/runtimes/air/mac/Adobe AIR.framework"; sourceTree = "<group>"; };
-		50DCBD861FD3331B00648DC8 /* Adobe AIR_64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "Adobe AIR_64"; path = "../../../../sdks/air/27.0.0/runtimes/air/mac/Adobe AIR.framework/Versions/1.0/Adobe AIR_64"; sourceTree = "<group>"; };
-		50EA4BD01DC62CAD005B6FE3 /* Adobe AIR_64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "Adobe AIR_64"; path = "../../../../sdks/air/23.0.0/runtimes/air/mac/Adobe AIR.framework/Versions/1.0/Adobe AIR_64"; sourceTree = "<group>"; };
+		50EA4BD01DC62CAD005B6FE3 /* Adobe AIR_64 */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "Adobe AIR_64"; path = "Vendor/Adobe/AIR/Adobe AIR.framework/Versions/1.0/Adobe AIR_64"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DCBD871FD3331B00648DC8 /* Adobe AIR_64 in Frameworks */,
-				50DCBD851FD332F100648DC8 /* Adobe AIR.framework in Frameworks */,
+				0E930BC31C19DB6B0064B228 /* Adobe AIR.framework in Frameworks */,
+				50EA4BD11DC62CAD005B6FE3 /* Adobe AIR_64 in Frameworks */,
 				0E2BB8C01A4898810032A829 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +116,6 @@
 				0E9748CF1A4871FB0066B507 /* Bridge */,
 				0E9749021A4872CD0066B507 /* Supporting Core */,
 				0E9748CE1A4871FB0066B507 /* Products */,
-				50DCBD831FD332F100648DC8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,15 +159,6 @@
 				0E9749081A487A6B0066B507 /* FlashRuntimeExtensions.h */,
 			);
 			name = "Supporting Platform";
-			sourceTree = "<group>";
-		};
-		50DCBD831FD332F100648DC8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				50DCBD861FD3331B00648DC8 /* Adobe AIR_64 */,
-				50DCBD841FD332F100648DC8 /* Adobe AIR.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,7 +322,7 @@
 				DYLIB_INSTALL_NAME_BASE = "$(inherit)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"${inherit}",
-					/Users/max/sdks/air/27.0.0/runtimes/air/mac,
+					Vendor/Adobe/AIR,
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_PREFIX_HEADER = "ANXBridge-Mac/ANXBridge-Mac-Prefix.pch";
@@ -373,7 +361,7 @@
 				DYLIB_INSTALL_NAME_BASE = "$(inherit)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"${inherit}",
-					/Users/max/sdks/air/27.0.0/runtimes/air/mac,
+					Vendor/Adobe/AIR,
 				);
 				FRAMEWORK_VERSION = A;
 				GCC_OPTIMIZATION_LEVEL = 0;
