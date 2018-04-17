@@ -2,3 +2,4 @@
 *.swc filter=lfs diff=lfs merge=lfs -text
 *.jar filter=lfs diff=lfs merge=lfs -text
 *.a filter=lfs diff=lfs merge=lfs -text
+anx-bridge-xcode/Vendor/** filter=lfs diff=lfs merge=lfs -text
