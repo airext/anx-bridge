@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "26.0.2"
 
     defaultConfig {
         minSdkVersion 15
@@ -19,11 +18,10 @@ android {
 }
 
 dependencies {
-//    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:27.0.2'
-    compile files('libs/FlashRuntimeExtensions.jar')
-    compile project(':ANXBridge-api')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation files('libs/FlashRuntimeExtensions.jar')
+    implementation project(':ANXBridge-api')
 }
 
 task copyDependencies(type: Copy) {
@@ -36,10 +34,10 @@ task clearJar(type: Delete) {
 }
 
 task jar(type: Jar) {
-    from zipTree('build/intermediates/bundles/release/classes.jar') // add original content
+    from zipTree('build/intermediates/intermediate-jars/release/classes.jar') // add original content
     from(file("src/main/AndroidManifest.xml")) {   // add new content
 //        into "META-INF"
     }
 }
 
-jar.dependsOn(clearJar, build)
+jar.dependsOn(clearJar, build, copyDependencies)
