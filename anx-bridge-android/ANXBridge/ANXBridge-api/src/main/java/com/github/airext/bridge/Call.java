@@ -1,7 +1,6 @@
 package com.github.airext.bridge;
 
-import com.adobe.fre.FREObject;
-import com.adobe.fre.FREWrongThreadException;
+import com.adobe.fre.*;
 
 /**
  * Created by mobitile on 12/10/15.
@@ -12,5 +11,5 @@ public interface Call
 
     void reject(String cause);
 
-    FREObject toFREObject() throws FREWrongThreadException;
+    FREObject toFREObject() throws FREWrongThreadException, FREASErrorException, FREInvalidObjectException, FRENoSuchNameException, FRETypeMismatchException, FREReadOnlyException;
 }

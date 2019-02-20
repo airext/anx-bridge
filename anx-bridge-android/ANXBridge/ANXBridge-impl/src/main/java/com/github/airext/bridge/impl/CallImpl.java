@@ -1,8 +1,6 @@
 package com.github.airext.bridge.impl;
 
-import com.adobe.fre.FREContext;
-import com.adobe.fre.FREObject;
-import com.adobe.fre.FREWrongThreadException;
+import com.adobe.fre.*;
 import com.github.airext.bridge.Call;
 
 /**
@@ -83,8 +81,11 @@ public class CallImpl implements Call
     }
 
     @Override
-    public FREObject toFREObject() throws FREWrongThreadException
+    public FREObject toFREObject() throws FREWrongThreadException, FREASErrorException, FREInvalidObjectException, FRENoSuchNameException, FRETypeMismatchException, FREReadOnlyException
     {
-        return FREObject.newObject(callId);
+        FREObject dto = FREObject.newObject("Object", null);
+        dto.setProperty("id", FREObject.newObject(callId));
+
+        return dto;
     }
 }
