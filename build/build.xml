@@ -7,7 +7,7 @@
 
     <property name="project.name" value="anx-bridge" />
     <property name="product.name" value="ANXBridge" />
-    <property name="extension.id" value="com.github.airext.ANXBridge" />
+    <property name="extension.id" value="com.github.airext.Bridge" />
 
 
     <property name="ios.project.dir" value="../${project.name}-xcode" />
@@ -224,6 +224,7 @@
             <arg line="-platform iPhone-ARM -platformoptions ../platform-ios.xml -C ios/ ."/>
             <arg line="-platform iPhone-x86 -platformoptions ../platform-ios.xml -C ios-simulator/ ."/>
             <arg line="-platform MacOS-x86-64 -C osx/ ."/>
+            <arg line="-platform Android-ARM64 -platformoptions ../platform-android.xml -C android/ ."/>
             <arg line="-platform Android-ARM -platformoptions ../platform-android.xml -C android/ ."/>
             <arg line="-platform Android-x86 -platformoptions ../platform-android.xml -C android/ ."/>
             <arg line="-platform default -C default/ ."/>

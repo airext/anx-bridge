@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c104ce86-8da2-46df-9fbe-652a65ed95b2" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anx-bridge-default/anx-bridge-default.iml" beforeDir="false" afterPath="$PROJECT_DIR$/anx-bridge-default/anx-bridge-default.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anx-bridge/anx-bridge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/anx-bridge/anx-bridge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/anx-bridge/build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/anx-bridge/build/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/anx-bridge.ane" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/anx-bridge.swc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/include/android/ANXBridge.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/include/android/ANXBridge.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.ANXBridge.ane" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.ANXBridge.ane" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.ANXBridge.swc" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.ANXBridge.swc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/build.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../build/extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/extension.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/ios/libANXBridge.a" beforeDir="false" afterPath="$PROJECT_DIR$/../build/ios/libANXBridge.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/osx/ANXBridge.framework/Versions/A/ANXBridge" beforeDir="false" afterPath="$PROJECT_DIR$/../build/osx/ANXBridge.framework/Versions/A/ANXBridge" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/osx/ANXBridge.framework/Versions/A/Resources/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/../build/osx/ANXBridge.framework/Versions/A/Resources/Info.plist" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +96,7 @@
       <updated>1523943590475</updated>
       <workItem from="1523943591858" duration="32000" />
       <workItem from="1527573012869" duration="631000" />
-      <workItem from="1572450139873" duration="1551000" />
+      <workItem from="1572450139873" duration="1744000" />
     </task>
     <servers />
   </component>
