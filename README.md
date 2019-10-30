@@ -4,10 +4,10 @@
 This is utility [AIR Native Extension](http://www.adobe.com/devnet/air/native-extensions-for-air.html) that allows to add asynchronous calls to other native extension.
 
 ## Setup
-Use [anx-bridge.swc](https://github.com/airext/anx-bridge/blob/master/bin/anx-bridge.swc) library and corresponded headers to build ANE and [anx-bridge.ane](https://github.com/airext/anx-bridge/blob/master/bin/anx-bridge.ane) for application that uses ANE based on anx-bridge.
+Use [com.github.airext.Bridge.swc](https://github.com/airext/anx-bridge/blob/master/bin/com.github.airext.Bridge.swc) library and corresponded headers to build ANE and [com.github.airext.Bridge.ane](https://github.com/airext/anx-bridge/blob/master/bin/com.github.airext.Bridge.ane) for application that uses ANE based on anx-bridge.
 
 ### Setup ActionScript project
-Just link [anx-bridge.swc](https://github.com/airext/anx-bridge/blob/master/bin/anx-bridge.swc) as **external** library.
+Just link [com.github.airext.Bridge.swc](https://github.com/airext/anx-bridge/blob/master/bin/anx-bridge.swc) as **external** library.
 
 ### Setup Objective-C project
 * link corresponded headers to your Xcode [bin/headers/ios](https://github.com/airext/anx-bridge/blob/master/bin/include/ios) for iOS project and [bin/headers/osx](https://github.com/airext/anx-bridge/blob/master/bin/include/osx) for OSX project;
@@ -31,8 +31,8 @@ void TSTContextInitializer(void* extData, const uint8_t* ctxType, FREContext ctx
 this registers additional functions used by anx-bridge.
 
 ### Setup Application project
-* link [anx-bridge.ane](https://github.com/airext/anx-bridge/blob/master/bin/anx-bridge.ane) with your project ([more info](http://help.adobe.com/en_US/air/build/WS597e5dadb9cc1e0253f7d2fc1311b491071-8000.html) about linking);
-* declare anx-bridge extension in your applicaton descriptor:
+* link [com.github.airext.Bridge.ane](https://github.com/airext/anx-bridge/blob/master/bin/com.github.airext.Bridge.ane) with your project ([more info](http://help.adobe.com/en_US/air/build/WS597e5dadb9cc1e0253f7d2fc1311b491071-8000.html) about linking);
+* declare `com.github.airext.Bridge` extension in your applicaton descriptor:
 ```xml
 <extensions> 
     <extensionID>com.github.airext.Bridge</extensionID>
