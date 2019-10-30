@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/anx-bridge-air.iml" filepath="$PROJECT_DIR$/.idea/anx-bridge-air.iml" />
+      <module fileurl="file://$PROJECT_DIR$/anx-bridge/anx-bridge.iml" filepath="$PROJECT_DIR$/anx-bridge/anx-bridge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/anx-bridge-default/anx-bridge-default.iml" filepath="$PROJECT_DIR$/anx-bridge-default/anx-bridge-default.iml" />
     </modules>
   </component>
 </project>
