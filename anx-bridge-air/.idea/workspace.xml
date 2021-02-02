@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c104ce86-8da2-46df-9fbe-652a65ed95b2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anx-bridge/build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/anx-bridge/build/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.ANXBridge.ane" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.ANXBridge.ane" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.ANXBridge.swc" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.ANXBridge.swc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/build.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build/extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/extension.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.Bridge.ane" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.Bridge.ane" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.Bridge.swc" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.Bridge.swc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bin/include/android/ANXBridge.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/include/android/ANXBridge.jar" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,14 +22,27 @@
   </component>
   <component name="ProjectId" id="1SvhmrHj5r72eTNxndvfV9T1myA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../build/build.xml" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15295815" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="show.migrate.to.gradle.popup" value="false" />
@@ -39,19 +54,13 @@
       </list>
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -63,12 +72,6 @@
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -87,6 +90,18 @@
       </method>
     </configuration>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="c104ce86-8da2-46df-9fbe-652a65ed95b2" name="Default" comment="" />
@@ -96,7 +111,11 @@
       <updated>1523943590475</updated>
       <workItem from="1523943591858" duration="32000" />
       <workItem from="1527573012869" duration="631000" />
-      <workItem from="1572450139873" duration="1744000" />
+      <workItem from="1572450139873" duration="2024000" />
+      <workItem from="1575307978733" duration="7359000" />
+      <workItem from="1575377208185" duration="1409000" />
+      <workItem from="1578653956699" duration="123000" />
+      <workItem from="1585230093697" duration="1129000" />
     </task>
     <servers />
   </component>
@@ -108,10 +127,18 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="880" y="398" key="#Project_Structure" timestamp="1585230104053">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="880" y="398" key="#Project_Structure/0.23.2560.1417/-1680.413.1680.1027@0.23.2560.1417" timestamp="1585230104053" />
   </component>
 </project>
