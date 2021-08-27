@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c104ce86-8da2-46df-9fbe-652a65ed95b2" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/ANXBridge-impl/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../anx-bridge-android/ANXBridge/ANXBridge-impl/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.Bridge.ane" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.Bridge.ane" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bin/com.github.airext.Bridge.swc" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/com.github.airext.Bridge.swc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../bin/include/android/ANXBridge.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../bin/include/android/ANXBridge.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build/extension.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../build/extension.xml" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,7 +32,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../build/build.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/anx-bridge/build" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -47,6 +46,11 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/anx-bridge/build" />
+    </key>
+  </component>
   <component name="RubyModuleManagerSettings">
     <option name="blackListedRootsPaths">
       <list>
@@ -54,13 +58,19 @@
       </list>
     </option>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="&lt;template&gt;" type="JUnit" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -73,9 +83,14 @@
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
     </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,18 +104,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -116,6 +119,7 @@
       <workItem from="1575377208185" duration="1409000" />
       <workItem from="1578653956699" duration="123000" />
       <workItem from="1585230093697" duration="1129000" />
+      <workItem from="1630073626979" duration="2184000" />
     </task>
     <servers />
   </component>

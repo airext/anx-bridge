@@ -110,9 +110,6 @@
         <!-- Copy implementation library to temporary build folder -->
 		<copy file="${android.project.dir}/${product.name}/${product.name}-impl/build/libs/${product.name}-impl.jar" tofile="temp/android/lib${product.name}.jar" overwrite="true"/>
 
-        <!-- Copy manifest to include it into ANE file -->
-        <copy file="${android.project.dir}/${product.name}/${product.name}-impl/src/main/AndroidManifest.xml" todir="temp/android" overwrite="true"/>
-
 	</target>
 
     <!--=====================================================================-->
